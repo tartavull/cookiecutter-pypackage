@@ -49,6 +49,10 @@ setup(
     },
     {%- endif %}
     include_package_data=True,
+    package_data = {
+        # If any package contains *.txt or *.rst files, include them:
+        '': ['*.txt', '*.xml', '*.html', '*.js']
+    },
     install_requires=requirements,
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
